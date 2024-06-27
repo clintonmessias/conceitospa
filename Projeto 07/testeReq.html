@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Start of atendimentocnx Zendesk Widget script -->
+<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=5ce96587-a264-43cc-974a-564e1f1003d3"> </script>
+<!-- End of atendimentocnx Zendesk Widget script -->
+  <script>
+    async function getWars(){
+      const resposta = await fetch('https://swapi.dev/api/people');
+      let novaResposta = await resposta.json();
+      novaResposta = novaResposta.results
+      console.log(novaResposta);
+
+      // for(let i = 0; i < novaResposta.length; i++){
+      //   console.log(novaResposta[i].name + " " + novaResposta[i].birth_year);
+      //   const div = `<div> nome: ${novaResposta[i].name}  ano de nascimento: ${novaResposta[i].birth_year}`
+      //   document.querySelector('#app').innerHTML = div
+      // }
+     for(let i = 0; i < novaResposta.length; i++) {
+      
+
+     }
+    }
+
+    async function createZendeskContact(name, email){
+      const username = 'clinton.antonio@combocx.com.br';
+      const password = '...'
+      let headers = new Headers();
+      headers.set('Authorization', 'Basic ' + base64.enconded(username + ":" + password));
+      fetch('https://pdi-combocxhelp.zendesk.com/api/v2/users', {
+        method: 'POST',
+        headers: headers
+      })
+      
+    }
+
+    getWars();
+    console.log('depois')
+  </script>
+</body>
+</html>
